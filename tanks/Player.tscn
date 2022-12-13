@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://bvlw6v0p1727n"]
+
+[ext_resource type="PackedScene" uid="uid://b6ufe2tduhoj1" path="res://tanks/Tank.tscn" id="1_2anp0"]
+[ext_resource type="Texture2D" uid="uid://tl0tltsoxytr" path="res://onlyObjects_retina.png" id="2_p4gij"]
+
+[node name="Player" instance=ExtResource("1_2anp0")]
+
+[node name="Body" parent="." index="0"]
+texture = ExtResource("2_p4gij")
+region_enabled = true
+region_rect = Rect2(308, 262, 80, 84)
+
+[node name="Turret" parent="." index="2"]
+rotation = -3.73552
+texture = ExtResource("2_p4gij")
+offset = Vector2(20, 0)
+region_enabled = true
+region_rect = Rect2(684, 14, 60, 24)
