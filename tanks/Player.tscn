@@ -1,18 +1,33 @@
-[gd_scene load_steps=3 format=3 uid="uid://bvlw6v0p1727n"]
+[gd_scene load_steps=5 format=3 uid="uid://bvlw6v0p1727n"]
 
 [ext_resource type="PackedScene" uid="uid://b6ufe2tduhoj1" path="res://tanks/Tank.tscn" id="1_2anp0"]
+[ext_resource type="Script" path="res://tanks/Player.gd" id="2_jqnlg"]
 [ext_resource type="Texture2D" uid="uid://tl0tltsoxytr" path="res://onlyObjects_retina.png" id="2_p4gij"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ng810"]
+size = Vector2(88.6238, 77.7787)
+
 [node name="Player" instance=ExtResource("1_2anp0")]
+rotation = 0.74702
+script = ExtResource("2_jqnlg")
+speed = 200
+metadata/_edit_group_ = true
 
 [node name="Body" parent="." index="0"]
 texture = ExtResource("2_p4gij")
 region_enabled = true
 region_rect = Rect2(308, 262, 80, 84)
 
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(5.31191, -1.93289e-06)
+shape = SubResource("RectangleShape2D_ng810")
+
 [node name="Turret" parent="." index="2"]
-rotation = -3.73552
+rotation = -0.00954598
 texture = ExtResource("2_p4gij")
 offset = Vector2(20, 0)
 region_enabled = true
 region_rect = Rect2(684, 14, 60, 24)
+
+[node name="Muzzle" parent="Turret" index="0"]
+position = Vector2(55, 0)
